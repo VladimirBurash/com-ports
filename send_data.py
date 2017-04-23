@@ -17,12 +17,5 @@ def send_data(to,data):
             res_data = s_data
             print(res_data,com.port)
 
-    if res_data == data:
-        print('Данные переданы:', res_data)
-        return True
-    else:
-        return False
-
-
-# send_data('1to3',b'1111111111111111')
+        return res_data
 

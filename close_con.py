@@ -1,13 +1,13 @@
 from port import comp1_in,comp1_out,comp2_in,comp2_out,comp3_in,comp3_out,pravila
-
-get_connect = b'0000000000000000'
+# TODO UNLINK сделать
+unlink = b'0000000000000000'
 
 def close_connect(to):
 
     computers = reversed(to.split('to'))
     reversed_way = '{}to{}'.format(*computers)
 
-    res = get_connect
+    res = unlink
 
     for i,com in enumerate(pravila[to]):
         if i/2 == 1 or i == 0:
@@ -31,7 +31,7 @@ def close_connect(to):
             res = response
             com.close()
 
-    if res == get_connect:
+    if res == unlink:
         print('Соединение закрыто',res)
         return True
     else:

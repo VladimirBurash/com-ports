@@ -1,14 +1,15 @@
 import serial,time
 from port import comp1_in,comp1_out,comp2_in,comp2_out,comp3_in,comp3_out,pravila
-
-get_connect = b'1111111111111111'
+# Нужно сделать при логине первого пользователя
+# TODO link, не забыть спиздеть на защите
+link = b'1111111111111111'
 
 def open_connect(to):
 
     computers = reversed(to.split('to'))
     reversed_way = '{}to{}'.format(*computers)
 
-    res = get_connect
+    res = b''
 
     for i,com in enumerate(pravila[to]):
         if i/2 == 1 or i == 0:
@@ -30,7 +31,7 @@ def open_connect(to):
             response = com.read(16)
             res = response
 
-    if res == get_connect:
+    if res == link:
         print('Соединение открыто',res)
         return True
     else:

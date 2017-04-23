@@ -7,7 +7,7 @@ from one_file import s
 
 open_connect('1to3')
 time.sleep(3)
-send_data('1to3', b'1111111111111111')
-close_connect('1to3')
+send_data('1to3', b'1010101010101010')
+# close_connect('1to3')
 
-time.sleep(5)
+# time.sleep(5)
